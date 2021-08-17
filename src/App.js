@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// styled
+import GlobalStyles from './GlobalStyles.js'
+
+// components
+import Nav from './components/Nav.js';
+import Footer from './components/Footer.js';
+import Pending from './components/Pending.js';
+import InProgress from './components/InProgress.js';
+import ToBeReviewed from './components/ToBeReviewed.js';
+import Published from './components/Published.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyles />
+      
+      <Nav />
+      
+      <Pending />
+      <InProgress />
+      <ToBeReviewed />
+      <Published />
+
+      <Footer />
     </div>
   );
 }
