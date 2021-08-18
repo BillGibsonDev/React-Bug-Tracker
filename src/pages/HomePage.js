@@ -6,21 +6,29 @@ import styled from 'styled-components';
 // components
 import Issue from '../components/Issue.js';
 
-export default function HomePage({ issues, name, date, description, status, file }) {
+const HomePage = ({ issues }) => {
+     console.log(issues);
+    
     return (
         <StyledHomePage>
-            <Issue 
-                name={name}
-                date={date}
-                description={description}
-                status={status}
-                file={file}
-            />
-
+            {issues.map((issues, key) => {
+                return(
+                    <Issue 
+                        name={issues.name}
+                        date={issues.date}
+                        description={issues.description}
+                        status={issues.status}
+                        file={issues.file}
+                        key={issues.id}
+                    />
+                )
+            })}
         </StyledHomePage>
     )
 }
 
 const StyledHomePage = styled.div`
-height: 100%;
+height: 100vh;
 `;
+
+export default HomePage;

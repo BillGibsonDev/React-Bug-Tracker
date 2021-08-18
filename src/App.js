@@ -9,7 +9,7 @@ import { Route, Switch } from 'react-router-dom';
 // components
 import Nav from './components/Nav.js';
 import Footer from './components/Footer.js';
-import CreateBug from './components/CreateIssue.js'; 
+import CreateIssue from './components/CreateIssue.js'; 
 
 // pages
 import HomePage from './pages/HomePage.js';
@@ -32,7 +32,7 @@ function App() {
       <GlobalStyles />
 
       <Nav />
-      <CreateBug 
+      <CreateIssue 
         issues={issues}
         setIssues={setIssues}
         setDate={setDate}
@@ -47,12 +47,12 @@ function App() {
 
         <Route to='/'>
           <HomePage 
-          issues={issues}
-          name={name}
-          date={date}
-          description={description}
-          status={status}
-          file={file}
+            issues={issues}
+            name={name}
+            date={date}
+            description={description}
+            status={status}
+            file={file}
           />
         </Route>
 
