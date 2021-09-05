@@ -1,15 +1,31 @@
 
+import { useEffect } from 'react';
+
+// styled
 import styled from 'styled-components';
 
-export default function Issue({name, date, description, status, file}) {
+const Issue = ({name, date, description, status, file}) => {
+
+const colorCode = (e) => {
+    let x = e.target
+    if ({status} == 'Pending'){
+        x.style.background = 'red';
+    } else if ({status} == 'InReview'){
+        x.style.background = 'blue';
+    } else {
+        x.style.background = 'black';
+    }
+}
+
 
     return (
-        <StyledIssue>
+        <StyledIssue id="issue" onClick={colorCode}>
             <h3>{name}</h3>
             <h3>{date}</h3>
             <h3>{status}</h3>
             <p>{description}</p>
-            <img src={file} alt="" />
+            <img src={file} alt={file} />
+            
         </StyledIssue>
     )
 }
@@ -23,3 +39,5 @@ p {
     font-size: 2em;
 }
 `;
+
+export default Issue;

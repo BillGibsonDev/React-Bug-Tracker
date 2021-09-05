@@ -28,7 +28,7 @@ const HomePage = ({ issues }) => {
 }
 
 const StyledHomePage = styled.div`
-height: 100vh;
+height: 100%;
 `;
 
 export default HomePage;
